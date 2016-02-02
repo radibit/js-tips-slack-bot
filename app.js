@@ -41,7 +41,7 @@ function sendLatestTip( path ) {
             icon_emoji : ':octocat:'
         };
 
-        bot.postMessageToUser( 'radimir', jsTipMessage, params );
+        bot.postMessageToChannel( process.env.SLACK_CHANNEL, jsTipMessage, params );
     } );
   } );
 }
