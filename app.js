@@ -9,7 +9,7 @@ var bot = new SlackBot( {
 } );
 
 var options = {
-  token : process.env.GH_TOKEN;
+  token : process.env.GH_TOKEN
 };
 
 var interval     = 7200000;
