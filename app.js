@@ -41,7 +41,7 @@ function sendLatestTip( path ) {
             icon_emoji : ':octocat:'
         };
 
-        bot.postMessageToChannel( process.env.SLACK_CHANNEL, jsTipMessage, params );
+        bot.postMessageToGroup( process.env.SLACK_GROUP, jsTipMessage, params );
     } );
   } );
 }
