@@ -1,0 +1,25 @@
+{
+  "name": "js-tips-slack-bot",
+  "version": "1.0.0",
+  "description": "Slack Bot for getting the latest JS tips",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radibit/js-tips-slack-bot.git"
+  },
+  "keywords": [
+    "slackbot",
+    "jstips"
+  ],
+  "engines": {
+    "node": "5.1.x"
+  },
+  "author": "radimir bitsov <radimir.bitsov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/radibit/js-tips-slack-bot/issues"
+  },
+  "dependencies": {
+    "github-get": "^0.3.1",
+    "slackbots": "^0.5.1"
+  }
+}
