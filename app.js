@@ -38,7 +38,7 @@ function sendLatestTip( path ) {
 
     bot.on( 'open', function() {
         var params = {
-            icon_emoji : ':octocat:'
+            icon_url : 'https://raw.githubusercontent.com/radibit/js-tips-slack-bot/images/jstips-logo.png'
         };
 
         bot.postMessageToGroup( process.env.SLACK_GROUP, jsTipMessage, params );
