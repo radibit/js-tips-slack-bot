@@ -7,7 +7,7 @@
     "url": "https://github.com/radibit/js-tips-slack-bot.git"
   },
   "scripts": {
-    "start" : "node app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "slackbot",
@@ -22,6 +22,7 @@
     "url": "https://github.com/radibit/js-tips-slack-bot/issues"
   },
   "dependencies": {
+    "dotenv": "^2.0.0",
     "github-get": "^0.3.1",
     "slackbots": "^0.5.1"
   }
