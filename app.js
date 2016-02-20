@@ -2,12 +2,12 @@
 
 require( 'dotenv' ).config();
 
-var SlackBot  = require( 'slackbots' );
-var ghget     = require( 'github-get' );
+var SlackBot = require( 'slackbots' );
+var ghget    = require( 'github-get' );
 
 var bot = new SlackBot( {
-    token : process.env.SLACK_TOKEN,
-    name  : 'JS Tips'
+  token : process.env.SLACK_TOKEN,
+  name  : 'JS Tips'
 } );
 
 var options = {
@@ -40,7 +40,7 @@ function sendLatestTip( path ) {
 
     bot.on( 'open', function() {
       var params = {
-          icon_url : 'https://raw.githubusercontent.com/radibit/js-tips-slack-bot/master/images/jstips-logo.png'
+        icon_url : 'https://raw.githubusercontent.com/radibit/js-tips-slack-bot/master/images/jstips-logo.png'
       };
 
       switch( process.env.SLACK_POST_TO ) {
