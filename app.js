@@ -10,6 +10,10 @@ var bot = new SlackBot( {
     name  : 'JS Tips'
 } );
 
+var params = {
+  icon_url : 'https://raw.githubusercontent.com/radibit/js-tips-slack-bot/master/images/jstips-logo.png'
+}
+
 var options = {
   token : process.env.GH_TOKEN
 };
@@ -38,13 +42,7 @@ function sendLatestTip( path ) {
 
     jsTipMessage += jsTip[ 'html_url' ];
 
-    bot.on( 'open', function() {
-        var params = {
-            icon_url : 'https://raw.githubusercontent.com/radibit/js-tips-slack-bot/master/images/jstips-logo.png'
-        };
-
-        bot.postMessageToGroup( process.env.SLACK_GROUP, jsTipMessage, params );
-    } );
+    bot.postMessageToChannel( process.env.SLACK_GROUP, jsTipMessage, params );
   } );
 }
 
