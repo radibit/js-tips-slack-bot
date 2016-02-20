@@ -1,6 +1,6 @@
 'use strict';
 
-require('dotenv').config();
+require( 'dotenv' ).config();
 
 var SlackBot  = require( 'slackbots' );
 var ghget     = require( 'github-get' );

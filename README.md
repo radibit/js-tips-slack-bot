@@ -7,11 +7,11 @@ Slack Bot implementation for sending the latest JS tips collected in https://git
 
 This is a Node.js app, so the first step is to be sure you have installed Node.js and npm:
 
-- OS X 
+- OS X
 
-Go to [nodejs.org](nodejs.org), Click `install`, and run through the install process. 
+Go to [nodejs.org](nodejs.org), Click `install`, and run through the install process.
 
-- Ubuntu 
+- Ubuntu
 
 You can use the  Node.js binary distributions
 
@@ -62,6 +62,9 @@ There are three config variables for this project:
 
 
 ## Test it locally
+
+First you need to create `.env` file in the root folder of the project and list there the required config variables.
+You can use as a reference the `.sample-env` file.
 
 After providing the required values for the config variables, you can run the app with the following command:
 
