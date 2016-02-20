@@ -55,10 +55,11 @@ in order to install locally the required dependencies.
 
 ## Config
 
-There are three config variables for this project:
+There are four config variables for this project:
 - `GH_TOKEN` - GitHub API token - can be generated from your GitHub [settings panel](https://github.com/settings/tokens)
 - `SLACK_TOKEN` - Slack API Token - in order to create one visit [Slack API settings](https://api.slack.com/web)
 - `SLACK_GROUP` - Target Slack group - specify the Slack group that will receive the messages
+- `SLACK_POST_TO` ( optional ) - Specify if the messages should be posted to a private group ( `group` ) which is the default option or a public channel ( `channel` )
 
 
 ## Test it locally

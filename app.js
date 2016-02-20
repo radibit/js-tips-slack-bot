@@ -39,11 +39,20 @@ function sendLatestTip( path ) {
     jsTipMessage += jsTip[ 'html_url' ];
 
     bot.on( 'open', function() {
-        var params = {
-            icon_url : 'https://raw.githubusercontent.com/radibit/js-tips-slack-bot/master/images/jstips-logo.png'
-        };
+      var params = {
+          icon_url : 'https://raw.githubusercontent.com/radibit/js-tips-slack-bot/master/images/jstips-logo.png'
+      };
 
-        bot.postMessageToGroup( process.env.SLACK_GROUP, jsTipMessage, params );
+      switch( process.env.SLACK_POST_TO ) {
+        case 'group':
+          bot.postMessageToGroup( process.env.SLACK_GROUP, jsTipMessage, params );
+          break;
+        case 'channel':
+          bot.postMessageToChannel( process.env.SLACK_GROUP, jsTipMessage, params );
+          break;
+        default:
+          bot.postMessageToGroup( process.env.SLACK_GROUP, jsTipMessage, params );
+      }
     } );
   } );
 }
