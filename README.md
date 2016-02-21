@@ -73,7 +73,7 @@ After providing the required values for the config variables, you can run the ap
 npm run start
 ```
 
-If you want to end the started terminal process, you can do this using `ctrl + c`
+If you want to end the started terminal process, you can do this using <kbd>ctrl</kbd> + <kbd>c</kbd>
 
 Playing with the script you can adjust whether you want to send the js tip to a Slack group ( default ), channel or single user. More info about the exposed methods of the [Slack's Real Time Messaging API](https://api.slack.com/rtm) can be found [here](https://github.com/mishk0/slack-bot-api#methods)
 
@@ -84,16 +84,8 @@ Playing with the script you can adjust whether you want to send the js tip to a 
 It's fun to play locally with the app :smiley:, but the real benefit of using it comes when we deploy it and set it up to automatically send us the new JS tips every day. So let's do this:
 
 1. Create an account and download Heroku [https://toolbelt.heroku.com/](https://toolbelt.heroku.com/)
-2. Create a `.env` file inside of the project folder listing all the required config variables:
 
-Example:
-
-```
-GH_TOKEN=xxxxxxxxxxxxxxxxxxx
-SLACK_TOKEN=xoxp-xxxxxxxxxxxxxx
-SLACK_GROUP=your-fancy-slack-group
-
-```
+2. Rename the `.sample-env` file to `.env` inside of the project folder and replace the placeholder variables with real tokens/values (see [Config](#config) section)
 
 3. In the terminal, within the project folder, run the following command to create a new Heroku app:
 
@@ -106,9 +98,9 @@ More help info how to use the Heroku CLI can be found on the [Heroku DevCenter](
 4. Commit and push the Heroku app:
 
 ```
-git add
+git add -f .env
 
-git commit -m "my fancy commit message"
+git commit -m "Added private tokens that I promise to never-ever-ever share with the public."
 
 git push heroku master
 ```
@@ -116,4 +108,5 @@ git push heroku master
 With the last command you are actually deploying your app to Heroku and after that it will be already running live.
 
 5. You can find your new app listed in the [Heroku dashboard](https://dashboard.heroku.com/apps)
+
 6. Enjoy :tada:
