@@ -24,6 +24,7 @@
   "dependencies": {
     "dotenv": "^2.0.0",
     "github-get": "^0.3.1",
+    "pg": "^4.5.5",
     "slackbots": "^0.5.1"
   }
 }

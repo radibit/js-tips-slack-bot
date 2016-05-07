@@ -4,6 +4,10 @@ require( 'dotenv' ).config();
 
 var SlackBot = require( 'slackbots' );
 var ghget    = require( 'github-get' );
+var pg       = require( 'pg' );
+var fs       = require( 'fs' );
+
+pg.defaults.ssl = true;
 
 var bot = new SlackBot( {
   token : process.env.SLACK_TOKEN,
@@ -14,8 +18,7 @@ var options = {
   token : process.env.GH_TOKEN
 };
 
-var interval     = 7200000;
-var oldJsTip     = {};
+var interval     = 18000000;
 var jsTipMessage = '';
 
 /**
@@ -70,11 +73,44 @@ function getLatestTip() {
 
     var newJsTip = filenames[ filenames.length - 1 ];
 
-    if ( newJsTip.path !== oldJsTip.path ) {
-      oldJsTip = newJsTip;
+    updateDbEntry( newJsTip );
+  } );
+}
 
-      sendLatestTip( newJsTip.path );
-    }
+/**
+ * Update DB entry for the latest JS tip
+ *
+ * @param  {Object} latestJsTip - Meta info for the latest JS tip
+ */
+function updateDbEntry( latestJsTip ) {
+  var isNewJSTip = false;
+
+  pg.connect( process.env.DATABASE_URL, function( err, client ) {
+    if ( err ) throw err;
+
+    client
+      .query( 'SELECT name FROM js_tip;' )
+      .on( 'row', function( row ) {
+        if ( latestJsTip.name !== row.name ) {
+          isNewJSTip = true;
+
+          client
+            .query(
+              'UPDATE js_tip SET name = ($1) WHERE msg_id = 1',
+              [ 'latestJsTip.name' ],
+              function( err, result ) {
+                if ( err ) throw err;
+              }
+            );
+        }
+      } );
+
+    client
+      .on( 'drain', function() {
+        if ( isNewJSTip ) {
+          sendLatestTip( latestJsTip.path );
+        }
+      } );
   } );
 }
 
