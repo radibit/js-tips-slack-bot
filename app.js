@@ -5,7 +5,6 @@ require( 'dotenv' ).config();
 var SlackBot = require( 'slackbots' );
 var ghget    = require( 'github-get' );
 var pg       = require( 'pg' );
-var fs       = require( 'fs' );
 
 pg.defaults.ssl = true;
 
