@@ -96,7 +96,7 @@ function updateDbEntry( latestJsTip ) {
           client
             .query(
               'UPDATE js_tip SET name = ($1) WHERE msg_id = 1',
-              [ 'latestJsTip.name' ],
+              [ latestJsTip.name ],
               function( err, result ) {
                 if ( err ) throw err;
               }
