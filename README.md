@@ -60,6 +60,7 @@ There are four config variables for this project:
 - `SLACK_TOKEN` - Slack API Token - in order to create one visit [Slack API settings](https://api.slack.com/web)
 - `SLACK_GROUP` - Target Slack group - specify the Slack group that will receive the messages
 - `SLACK_POST_TO` ( optional ) - Specify if the messages should be posted to a private group ( `group` ) which is the default option or a public channel ( `channel` )
+- `DATABASE_URL` - Heroku Postgres URL - provide URL in order to connect the app to a Postgres database. Once you installed the Heroku Postgres add-on  you can find the required information on the [connection settings](https://postgres.heroku.com/databases) panel
 
 
 ## Test it locally
@@ -109,4 +110,8 @@ With the last command you are actually deploying your app to Heroku and after th
 
 5. You can find your new app listed in the [Heroku dashboard](https://dashboard.heroku.com/apps)
 
-6. Enjoy :tada:
+6. Set up a database in order to store the latest JS tip and send a Slack message only when there is a new one. 
+
+You need to configure the Heroku Postgres add-on and create a table with a name `js_tip` and two columns - `msg_id` ( PRIMARY KEY ) and `name` ( varchar (250) )
+
+7. Enjoy :tada:

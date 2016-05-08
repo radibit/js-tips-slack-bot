@@ -2,3 +2,4 @@ SLACK_TOKEN=xoxp-xxxxxx
 SLACK_GROUP=xxxxxxxxx
 SLACK_POST_TO=group|channel
 GH_TOKEN=xxxxxxxxx
+DATABASE_URL=xxxxxxxxx
