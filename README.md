@@ -90,28 +90,28 @@ It's fun to play locally with the app :smiley:, but the real benefit of using it
 
 3. In the terminal, within the project folder, run the following command to create a new Heroku app:
 
-```
-heroku create
-```
+  ```
+  heroku create
+  ```
 
-More help info how to use the Heroku CLI can be found on the [Heroku DevCenter](https://devcenter.heroku.com/categories/command-line)  
+  More help info how to use the Heroku CLI can be found on the [Heroku DevCenter](https://devcenter.heroku.com/categories/command-line)  
 
 4. Commit and push the Heroku app:
 
-```
-git add -f .env
+  ```
+  git add -f .env
+  
+  git commit -m "Added private tokens that I promise to never-ever-ever share with the public."
+  
+  git push heroku master
+  ```
 
-git commit -m "Added private tokens that I promise to never-ever-ever share with the public."
-
-git push heroku master
-```
-
-With the last command you are actually deploying your app to Heroku and after that it will be already running live.
+  With the last command you are actually deploying your app to Heroku and after that it will be already running live.
 
 5. You can find your new app listed in the [Heroku dashboard](https://dashboard.heroku.com/apps)
 
 6. Set up a database in order to store the latest JS tip and send a Slack message only when there is a new one. 
 
-You need to configure the Heroku Postgres add-on and create a table with a name `js_tip` and two columns - `msg_id` ( PRIMARY KEY ) and `name` ( varchar (250) )
+  You need to configure the Heroku Postgres add-on and create a table with a name `js_tip` and two columns - `msg_id` ( PRIMARY KEY ) and `name` ( varchar (250) )
 
 7. Enjoy :tada:
