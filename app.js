@@ -17,7 +17,7 @@ var options = {
   token : process.env.GH_TOKEN
 };
 
-var interval     = 18000000;
+var interval     = 7200000;
 var jsTipMessage = '';
 
 /**
