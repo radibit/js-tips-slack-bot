@@ -14,7 +14,7 @@
     "jstips"
   ],
   "engines": {
-    "node": "5.1.x"
+    "node": "6.11.1"
   },
   "author": "radimir bitsov <radimir.bitsov@gmail.com>",
   "license": "MIT",
